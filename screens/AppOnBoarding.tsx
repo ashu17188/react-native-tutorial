@@ -35,8 +35,8 @@ export const AppOnBoarding = ({ navigation }) => {
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DotComponent={Dots}
-      onSkip={() => navigation.replace("Home")}
-      onDone={() => navigation.navigate("Home")}
+      onSkip={() => navigation.replace("Login")}
+      onDone={() => navigation.navigate("Login")}
       pages={[
         {
           backgroundColor: "#fff",

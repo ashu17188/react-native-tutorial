@@ -1,9 +1,11 @@
-import { createStackNavigator, TransitionSpecs } from "@react-navigation/stack";
 import React from "react";
 import { Animated } from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import { HeaderStyleInterpolators } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  HeaderStyleInterpolators,
+} from "@react-navigation/stack";
 import { AppOnBoarding } from "../screens/AppOnBoarding";
 
 const Stack = createStackNavigator();
@@ -24,14 +26,9 @@ const forFade = ({ current, next }) => {
   };
 };
 
-export const MyStack = () => {
+const AppStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Onboarding"
-        component={AppOnBoarding}
-        options={{ header: () => null }}
-      />
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -49,3 +46,5 @@ export const MyStack = () => {
     </Stack.Navigator>
   );
 };
+
+export default AppStack;

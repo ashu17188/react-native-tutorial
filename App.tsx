@@ -1,14 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { MyStack } from "./navigation/MyStack";
+import Providers from "./navigation/Providers";
+import { Routes } from "./navigation/Routes";
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
-  );
+  return <Providers />;
 }
 
 const styles = StyleSheet.create({
@@ -19,6 +16,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-function createStackNavigator() {
-  throw new Error("Function not implemented.");
-}
