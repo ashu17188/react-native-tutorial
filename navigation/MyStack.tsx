@@ -1,8 +1,10 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, TransitionSpecs } from "@react-navigation/stack";
 import React from "react";
 import { Animated } from "react-native";
-import HomeScreen from "../components/HomeScreen";
-import ProfileScreen from "../components/ProfileScreen";
+import HomeScreen from "../screens/HomeScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import { HeaderStyleInterpolators } from "@react-navigation/stack";
+import { AppOnBoarding } from "../screens/AppOnBoarding";
 
 const Stack = createStackNavigator();
 const forFade = ({ current, next }) => {
@@ -26,18 +28,22 @@ export const MyStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="Onboarding"
+        component={AppOnBoarding}
+        options={{ header: () => null }}
+      />
+      <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: "tomato" },
+          headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
         }}
       />
       <Stack.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          headerStyleInterpolator: forFade,
+          headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
         }}
       />
     </Stack.Navigator>
