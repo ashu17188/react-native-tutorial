@@ -197,7 +197,7 @@ const HomeScreen = ({ navigation }) => {
     return null;
   };
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor:'#fff' }}>
       {loading ? (
         <ScrollView
           style={{ flex: 1 }}
